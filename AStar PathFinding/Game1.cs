@@ -15,16 +15,16 @@ public class Game1 : Game
     char[,] Grid = new char[,] { };
     char[,] OriginalGrid = new char[,]
     {
-        {' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-        {' ',' ',' ','W',' ',' ',' ',' ','W',' '},
-        {' ',' ',' ','W',' ',' ',' ',' ','W',' '},
-        {' ',' ',' ','W','W',' ',' ',' ','W',' '},
-        {'S',' ',' ',' ',' ','W',' ',' ','W',' '},
-        {' ',' ',' ',' ',' ','W',' ',' ',' ',' '},
-        {' ',' ',' ',' ',' ','W',' ',' ',' ',' '},
-        {' ',' ',' ',' ',' ','W',' ',' ',' ',' '},
-        {' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-        {' ',' ',' ',' ',' ',' ',' ',' ',' ','W'},
+        {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ', ' ', ' ',' ', ' '},
+        {' ',' ',' ','W',' ',' ',' ',' ','W',' ',' ', ' ', ' ','W', ' '},
+        {' ',' ',' ','W',' ',' ',' ',' ','W',' ',' ', 'W', ' ',' ', ' '},
+        {' ',' ',' ','W','W',' ',' ',' ','W',' ',' ', 'W', ' ',' ', ' '},
+        {'S',' ',' ',' ',' ','W',' ',' ','W',' ',' ', ' ', ' ','W', ' '},
+        {' ',' ',' ',' ',' ','W',' ',' ',' ',' ',' ', ' ', ' ','W', ' '},
+        {' ',' ',' ',' ',' ','W',' ','W',' ',' ',' ', ' ', ' ','W', ' '},
+        {' ',' ',' ',' ',' ','W',' ','W',' ',' ','W', ' ', ' ','W', ' '},
+        {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','W', ' ', ' ',' ', ' '},
+        {' ',' ',' ',' ',' ',' ',' ',' ',' ','W',' ', ' ', ' ',' ', ' '},
     };
 
     int SquareSize = 45;
@@ -71,7 +71,7 @@ public class Game1 : Game
         int MouseGridY = MouseCursor.Y / SquareSize;
 
 // Check bounds
-        if (MouseGridX >= 0 && MouseGridX < 10 && MouseGridY >= 0 && MouseGridY < 10)
+        if (MouseGridX >= 0 && MouseGridX < 15 && MouseGridY >= 0 && MouseGridY < 15)
         {
             if (Grid[MouseGridY, MouseGridX] == ' ')
             {
@@ -112,7 +112,7 @@ public class Game1 : Game
         for (int Row = 0; Row < 10; Row++)
         {
             ActiveRowPosition = SquareSize * Row;
-            for (int Column = 0; Column < 10; Column++)
+            for (int Column = 0; Column < 15; Column++)
             {
                 ActiveColumnPosition = SquareSize * Column;
                 switch (Grid[Row, Column])
